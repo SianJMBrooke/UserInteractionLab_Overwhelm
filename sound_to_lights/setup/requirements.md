@@ -67,6 +67,8 @@ Settings are saved locally for future runs.
 
 If you need to re-pair or reconfigure, delete the local files:
 
+``` bash
 rm hue_api_key.txt hue_group_id.txt hue_input_device.txt
+```
 
 The script will prompt you again on the next run.

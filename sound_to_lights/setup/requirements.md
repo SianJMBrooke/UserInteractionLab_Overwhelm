@@ -44,9 +44,9 @@ From the project root folder, run:
 python3 -m pip install -r requirements.txt
 ```
 This installs:
-	•	sounddevice – microphone input
-	•	numpy – audio signal processing
-	•	requests – communication with the Hue Bridge
+- sounddevice – microphone input
+- numpy – audio signal processing
+- requests – communication with the Hue Bridge
 
 
 ## First Run

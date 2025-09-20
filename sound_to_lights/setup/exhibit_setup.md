@@ -38,13 +38,13 @@ Because networks like **Eduroam** or the **Visualisation Lab WiFi** do not allow
 3. Save and reboot the extender.  
 
 ### 3. Connect the Hue Bridge
-1. Plug an Ethernet cable from the **LAN port of the RE450** into the **Hue Bridge**.  
-2. Wait until the middle LED (network icon) on the Hue Bridge is **solid**.  
+- Plug an Ethernet cable from the **LAN port of the RE450** into the **Hue Bridge**.
+- Wait until the middle LED (network icon) on the Hue Bridge is **solid**.  
 
 ### 4. Connect the Exhibit MacBook
-1. Connect the MacBook’s WiFi to the private SSID you set on the RE450 (e.g., `OverhelmNet`).  
-2. Confirm the MacBook has an IP address in the same range as the Bridge (e.g., `192.168.0.x`).  
-   - Check in Terminal:  
+- Connect the MacBook’s WiFi to the private SSID you set on the RE450 (e.g., `OverhelmNet`).
+- Confirm the MacBook has an IP address in the same range as the Bridge (e.g., `192.168.0.x`).
+- Check in Terminal:  
      ```bash
      ifconfig en0
      ```  
@@ -57,7 +57,8 @@ Because networks like **Eduroam** or the **Visualisation Lab WiFi** do not allow
   arp -a
   ```
 You should see the Hue Bridge listed with an IP like 192.168.0.101.
-	Run the script:
+
+Run the script:
 
 ``` bash
 python3 hue_sound_reactive.py

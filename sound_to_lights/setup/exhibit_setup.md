@@ -70,17 +70,18 @@ It should auto-discover the Bridge and prompt for pairing.
 If the RE450 is unavailable:
 	1.	Connect the MacBook to Eduroam or Lab WiFi.
 	2.	Enable Internet Sharing in macOS:
-	•	Go to System Settings → Sharing → Internet Sharing
-	•	Share connection: Wi-Fi → Ethernet
-	3.	Connect the Hue Bridge to the Mac via Ethernet adapter.
-	4.	The Mac will assign the Bridge an IP (usually 192.168.2.2).
+	3.	Go to System Settings → Sharing → Internet Sharing
+	4.	Share connection: Wi-Fi → Ethernet
+	5.	Connect the Hue Bridge to the Mac via Ethernet adapter.
+	6.	The Mac will assign the Bridge an IP (usually 192.168.2.2).
 
 
-Notes
+### Notes:
 	•	The RE450 must stay powered on throughout the exhibit.
 	•	Always verify the Hue Bridge LEDs:
 	•	Left = Power
 	•	Middle = Network (must be solid)
 	•	Right = Internet
+
 
 If the middle LED is flashing or off, check cabling or reset the RE450.

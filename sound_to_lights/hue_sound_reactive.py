@@ -5,9 +5,35 @@
 #     python3 -m pip install sounddevice numpy requests
 
 import time, math, threading, queue, requests, numpy as np, sounddevice as sd, http.client, os
+from discover_hue import find_hue_bridge
 
 # ================= USER SETTINGS (tuned for quick reaction) =================
-BRIDGE_IP = None                 # e.g. "192.168.2.2"; leave None to auto-discover
+
+# Try to auto-discover bridge IP and cache it
+def get_bridge_ip():
+    cache_file = "hue_bridge_ip.txt"
+
+    # if cached IP exists, reuse it
+    if os.path.exists(cache_file):
+        with open(cache_file, "r") as f:
+            ip = f.read().strip()
+            if ip:
+                return ip
+
+    # otherwise discover and cache
+    ip = find_hue_bridge()
+    if ip:
+        with open(cache_file, "w") as f:
+            f.write(ip)
+    return ip
+
+BRIDGE_IP = get_bridge_ip()
+if not BRIDGE_IP:
+    print("❌ No Hue Bridge found")
+    exit(1)
+
+print(f"✅ Using Hue Bridge at {BRIDGE_IP}")
+
 API_KEY_FILE   = "hue_api_key.txt"
 GROUP_ID_FILE  = "hue_group_id.txt"
 INPUT_DEV_FILE = "hue_input_device.txt"

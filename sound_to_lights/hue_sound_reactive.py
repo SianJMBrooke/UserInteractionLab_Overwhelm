@@ -21,16 +21,16 @@ SAMPLE_RATE  = 48000
 BLOCK_SIZE   = 256               # was 1024; smaller = quicker response
 
 # Sensitivity / envelopes (faster attack, slightly quicker floor)
-VU_SMOOTHING    = 0.35           # was 0.7; lower = faster
-FLOOR_SMOOTHING = 0.94           # was 0.97; tracks room floor a bit quicker
-DB_WINDOW       = 18.0           # dB range from quiet→loud mapping
+VU_SMOOTHING    = 0.25           # was 0.7; lower = faster
+FLOOR_SMOOTHING = 0.90           # was 0.97; tracks room floor a bit quicker
+DB_WINDOW       = 15.0           # dB range from quiet→loud mapping
 CAL_OFFSET_DB   = 60.0           # shifts dBFS into usable range
 MIN_EFF_DB      = 20.0
 
 # Output pacing (more updates; smaller deltas trigger sends)
-UPDATE_HZ     = 20               # was 12
-MIN_DELTA_BRI = 2                # was 3
-MIN_DELTA_HUE = 800              # was 1500
+UPDATE_HZ     = 20               # Don’t push >30 — the Hue Bridge/Zigbee protocol has limits and may start ignoring updates if flooded.
+MIN_DELTA_BRI = 2                # was 4; smaller = more updates
+MIN_DELTA_HUE = 800              # was 1600; smaller = more updates
 SATURATION    = 254
 BRI_MIN, BRI_MAX = 25, 254
 # ===========================================================================
@@ -271,7 +271,7 @@ def main():
 
     t_send = threading.Thread(target=sender, daemon=True); t_send.start()
 
-    # Audio processing (fast attack + adaptive floor)
+    # Audio processing (fast attack + adaptive floor) 
     vu_db, floor_db = None, None
 
     def audio_cb(indata, frames, time_info, status):

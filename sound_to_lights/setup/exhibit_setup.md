@@ -55,10 +55,11 @@ Because networks like **Eduroam** or the **Visualisation Lab WiFi** do not allow
 - Run in Terminal:  
   ```bash
   arp -a
-```
+  ```
 You should see the Hue Bridge listed with an IP like 192.168.0.101.
 	Run the script:
-```
+
+``` bash
 python3 hue_sound_reactive.py
 ```
 It should auto-discover the Bridge and prompt for pairing.

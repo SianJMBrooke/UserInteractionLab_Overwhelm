@@ -1,5 +1,3 @@
-Here’s the plain text for setup/bridge_setup.md
-
 # Hue Bridge Setup
 
 This guide explains how to set up and pair the Philips Hue Bridge for the Overhelm exhibit.
@@ -19,13 +17,12 @@ This guide explains how to set up and pair the Philips Hue Bridge for the Overhe
 1. Run the script:  
    ```bash
    python3 hue_sound_reactive.py
-```
-	1.	When prompted, press the round link button on the Hue Bridge.
-	2.	The script will generate and save an API key in hue_api_key.txt.
-	3.	Only needed once — subsequent runs reuse this key.
-
+   ```
+2. When prompted, press the round link button on the Hue Bridge.
+3. The script will generate and save an API key in hue_api_key.txt.
+4. Only needed once — subsequent runs reuse this key.
 
 ## Verifying the Setup
-	•	Check in the Philips Hue app that all bulbs are connected and “reachable.”
-	•	Run the script and ensure that group/room selection lists the bulbs.
-	•	Make sound → bulbs should change color and brightness.
+- Check in the Philips Hue app that all bulbs are connected and “reachable.”
+- Run the script and ensure that group/room selection lists the bulbs.
+- Make sound → bulbs should change color and brightness.
